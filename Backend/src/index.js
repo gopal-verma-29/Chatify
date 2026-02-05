@@ -1,5 +1,5 @@
 import express from "express"
-import dotenv from "dotenv"
+import {ENV} from "./lib/env.js";
 import path from "path";
 
 
@@ -7,12 +7,11 @@ import authRoutes from "./Routes/auth.route.js";
 import messageRoutes from "./Routes/message.route.js";
 import connectDB from "./lib/db.js";
 
-dotenv.config();
 
 const app = express()
 const __dirname = path.resolve();
 
-const PORT = process.env.PORT;
+const PORT = ENV.PORT;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -22,7 +21,7 @@ app.use("/api/messages", messageRoutes);
 
 
 //Make ready for deployment
-if (process.env.NODE_ENV === "production") {
+if (ENV.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")))
 
   app.use((req, res) => {

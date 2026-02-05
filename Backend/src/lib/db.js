@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
+import {ENV} from "./env.js";
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(`${process.env.MONGO_URI}Chatify-app`)
+    await mongoose.connect(`${ENV.MONGO_URI}Chatify-app`)
     console.log("✅ MongoDB connected");
   } catch (err) {
     console.error("❌ DB Error:", err.message);
