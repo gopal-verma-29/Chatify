@@ -16,7 +16,7 @@ password:{
     type: String,
     required: true,
 },
-profilPic:{
+profilePic:{
     type: String,
     default: ""
 }
