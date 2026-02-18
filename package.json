@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/gopal-verma-29/Chatify/issues"
   },
-  "homepage": "https://github.com/gopal-verma-29/Chatify#readme"
+  "homepage": "https://github.com/gopal-verma-29/Chatify#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.24",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19"
+  }
 }
